@@ -1,6 +1,6 @@
 {% set name = "automat" %}
-{% set version = "0.6.0" %}
-{% set sha256 = "423be7e4d4187eb0917de0ddc5d87413f13a3ec4989d31dba31b15dd7a1016ed" %}
+{% set version = "0.7.0" %}
+{% set sha256 = "4fcac581fbc8cc1174972353d68950f097821c8ecdada0e6f813803d487fa9b5" %}
 
 package:
   name: {{ name|lower }}
