@@ -17,9 +17,8 @@ transducers).
 Current build status
 ====================
 
-[![Linux](https://img.shields.io/circleci/project/github/conda-forge/automat-feedstock/master.svg?label=Linux)](https://circleci.com/gh/conda-forge/automat-feedstock)
-[![OSX](https://img.shields.io/travis/conda-forge/automat-feedstock/master.svg?label=macOS)](https://travis-ci.org/conda-forge/automat-feedstock)
-[![Windows](https://img.shields.io/appveyor/ci/conda-forge/automat-feedstock/master.svg?label=Windows)](https://ci.appveyor.com/project/conda-forge/automat-feedstock/branch/master)
+All platforms:
+[![noarch](https://img.shields.io/circleci/project/github/conda-forge/automat-feedstock/master.svg?label=noarch)](https://circleci.com/gh/conda-forge/automat-feedstock)
 
 Current release info
 ====================
