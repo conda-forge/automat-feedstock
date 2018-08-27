@@ -1,34 +1,39 @@
-{% set name = "automat" %}
 {% set version = "0.7.0" %}
-{% set sha256 = "4fcac581fbc8cc1174972353d68950f097821c8ecdada0e6f813803d487fa9b5" %}
 
 package:
-  name: {{ name|lower }}
+  name: automat
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.tar.gz
-  url: https://github.com/glyph/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: {{ sha256 }}
-  patches:
-    - setup.py.patch
+  url: https://pypi.io/packages/source/A/Automat/Automat-{{ version }}.tar.gz
+  sha256: cbd78b83fa2d81fe2a4d23d258e1661dd7493c9a50ee2f1a5b2cac61c1793b0e
 
 build:
-  number: 0
-  script: python setup.py install --single-version-externally-managed --record record.txt
+  number: 1
+  noarch: python
+  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
+  entry_points:
+    - automat-visualize = automat._visualize:tool
 
 requirements:
-  build:
+  host:
     - python
-    - setuptools
+    - pip
+    - setuptools_scm
+    - m2r
   run:
     - python
-    - attrs
+    - attrs >=16.1.0
     - six
 
 test:
+  requires:
+    - python-graphviz >0.5.1
+    - twisted >=16.1.1
   imports:
     - automat
+  commands:
+    - automat-visualize -h
 
 about:
   home: https://github.com/glyph/Automat
@@ -46,3 +51,4 @@ about:
 extra:
   recipe-maintainers:
     - CJ-Wright
+    - ocefpaf
