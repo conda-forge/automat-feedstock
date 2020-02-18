@@ -30,9 +30,11 @@ test:
   requires:
     - python-graphviz >0.5.1
     - twisted >=16.1.1
+    - pip
   imports:
     - automat
   commands:
+    - pip check
     - automat-visualize -h
 
 about:
