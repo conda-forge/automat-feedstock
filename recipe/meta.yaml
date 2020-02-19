@@ -1,4 +1,4 @@
-{% set version = "0.8.0" %}
+{% set version = "20.2.0" %}
 
 package:
   name: automat
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/A/Automat/Automat-{{ version }}.tar.gz
-  sha256: 269a09dfb063a3b078983f4976d83f0a0d3e6e7aaf8e27d8df1095e09dc4a484
+  sha256: 7979803c74610e11ef0c0d68a2942b152df52da55336e0c9d58daf1831cbdf33
 
 build:
   number: 0
@@ -30,9 +30,11 @@ test:
   requires:
     - python-graphviz >0.5.1
     - twisted >=16.1.1
+    - pip
   imports:
     - automat
   commands:
+    - pip check
     - automat-visualize -h
 
 about:
