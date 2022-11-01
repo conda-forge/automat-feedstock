@@ -1,29 +1,30 @@
+{% set name = "automat" %}
 {% set version = "22.10.0" %}
 
 package:
-  name: automat
+  name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/A/Automat/Automat-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/Automat-{{ version }}.tar.gz
   sha256: e56beb84edad19dcc11d30e8d9b895f75deeb5ef5e96b84a467066b3b84bb04e
 
 build:
-  number: 0
-  noarch: python
-  script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
   entry_points:
     - automat-visualize = automat._visualize:tool
+  noarch: python
+  script: {{ PYTHON }} -m pip install . -vv
+  number: 0
 
 requirements:
   host:
-    - python
+    - python >=3.6
     - pip
     - setuptools_scm
     - m2r
   run:
-    - python
-    - attrs >=16.1.0
+    - python >=3.6
+    - attrs >=19.2.0
     - six
 
 test:
