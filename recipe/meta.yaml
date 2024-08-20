@@ -1,5 +1,5 @@
 {% set name = "automat" %}
-{% set version = "24.8.0" %}
+{% set version = "24.8.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: f55735fdae5f461176ba2c8be7438ee06e47c4028ad80d1b4d5abef96d9d5863
+  sha256: b34227cf63f6325b8ad2399ede780675083e439b20c323d376373d8ee6306d88
 
 build:
   entry_points:
