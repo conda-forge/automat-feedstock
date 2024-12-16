@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: b34227cf63f6325b8ad2399ede780675083e439b20c323d376373d8ee6306d88
 
 build:
@@ -14,16 +14,16 @@ build:
     - automat-visualize = automat._visualize:tool
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.6
+    - python {{ python_min }}
     - pip
     - setuptools_scm
     - m2r
   run:
-    - python >=3.6
+    - python >={{ python_min }}
     - attrs >=19.2.0
     - six
 
@@ -32,6 +32,7 @@ test:
     - python-graphviz >0.5.1
     - twisted >=16.1.1
     - pip
+    - python {{ python_min }}
   imports:
     - automat
   commands:
