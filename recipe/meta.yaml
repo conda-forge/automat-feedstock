@@ -1,5 +1,5 @@
 {% set name = "automat" %}
-{% set version = "24.8.1" %}
+{% set version = "25.4.16" %}
 
 package:
   name: {{ name|lower }}
@@ -7,14 +7,14 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: b34227cf63f6325b8ad2399ede780675083e439b20c323d376373d8ee6306d88
+  sha256: 0017591a5477066e90d26b0e696ddc143baafd87b588cfac8100bc6be9634de0
 
 build:
   entry_points:
     - automat-visualize = automat._visualize:tool
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 1
+  number: 0
 
 requirements:
   host:
